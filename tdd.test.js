@@ -2,6 +2,7 @@ import { cap } from './capitalize';
 import { revString } from './reverseString';
 import { calc } from './calculator';
 import { caesarCipher } from './caesar-cipher';
+import { analyzeArray } from './analyzeArray';
 
 describe('string tests', () => {
     test('capitalize', () => {
@@ -70,5 +71,16 @@ describe('caesar cipher test', () => {
 
     test('caesarCipher big numbers', () => {
         expect(caesarCipher('fdasf', 49)).toMatch(/caxpc/);
+    });
+});
+
+describe('array tests', () => {
+    test('analyzeArray', () => {
+        expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+            average: 4,
+            min: 1,
+            max: 8,
+            length: 6,
+        });
     });
 });
